@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uk">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Precision Gear — Styleboard v1</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ <style>
+  :root{
+   --c-primary:#0F172A;
+   --c-secondary:#1D4ED8;
+   --c-accent:#06B6D4;
+   --c-text:#111827;
+   --c-muted:#4B5563;
+   --c-light:#F3F4F6;
+   --c-surface:#FFFFFF;
+   --c-success:#16A34A;
+   --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--c-text);background:#eef2f7}
+  .wrap{max-width:1160px;margin:28px auto;padding:0 16px}
+  .card{background:var(--c-surface);border-radius:var(--radius);padding:22px;box-shadow:0 8px 24px rgba(15,23,42,.08);margin-bottom:18px}
+  h1,h2,h3{margin:0 0 10px}
+  p{margin:0;color:var(--c-muted);line-height:1.55}
+  .palette{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .sw{border-radius:12px;padding:12px;color:#fff;min-height:90px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px}
+  .sw.light{color:#111827;border:1px solid #e5e7eb}
+  .btns{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{padding:12px 16px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
+  .b1{background:var(--c-secondary);color:#fff}
+  .b2{background:var(--c-primary);color:#fff}
+  .b3{background:var(--c-success);color:#fff}
+  .b4{background:transparent;color:var(--c-secondary);border:1px solid #bfdbfe}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:stretch}
+  .heroBox{background:linear-gradient(135deg,var(--c-primary),#0b2a69);color:#fff;border-radius:14px;padding:28px}
+  .heroBox p{color:#c7d2fe}
+  .heroMedia{background:linear-gradient(120deg,#c7d2fe,#e0f2fe);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#1e3a8a;font-weight:700}
+  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .service{padding:14px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+  .service h3{font-size:16px}
+  .service p{font-size:14px}
+  .topnav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:#334155}
+  .chip{background:#eff6ff;color:#1e3a8a;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600}
+  @media (max-width:900px){.palette{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}}
+ 
+  .counterBox{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
+  .counterBox span{font-size:12px;color:#64748b;font-weight:600}
+  .counterBox strong{font-size:24px;letter-spacing:1px;color:#0f172a;font-weight:800;font-variant-numeric:tabular-nums}
+  @media (max-width:820px){.counterBox span{font-size:11px}.counterBox strong{font-size:20px}}
+</style>
+</head>
+<body>
+ <div class="wrap">
+  <div class="card">
+   <h1>Precision Gear — Styleboard v1</h1>
+   <p>Технічний B2B стиль для нового сайту: чітко, надійно, інженерно.</p>
+  </div>
+
+  <div class="card">
+   <h2>Кольорова палітра</h2>
+   <div class="palette">
+    <div class="sw" style="background:var(--c-primary)">Primary<br>#0F172A</div>
+    <div class="sw" style="background:var(--c-secondary)">Secondary<br>#1D4ED8</div>
+    <div class="sw" style="background:var(--c-accent)">Accent<br>#06B6D4</div>
+    <div class="sw" style="background:var(--c-success)">Success CTA<br>#16A34A</div>
+    <div class="sw light" style="background:#fff">Surface<br>#FFFFFF</div>
+    <div class="sw light" style="background:#F3F4F6">Neutral 100<br>#F3F4F6</div>
+    <div class="sw light" style="background:#E5E7EB">Border<br>#E5E7EB</div>
+    <div class="sw" style="background:#111827">Text<br>#111827</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <h2>Типографіка + кнопки</h2>
+   <p style="margin-bottom:12px">Inter 400/500/700, акцент на читабельність і контраст.</p>
+   <div class="btns">
+    <button class="btn b1">Отримати прорахунок</button>
+    <button class="btn b2">Надіслати креслення</button>
+    <button class="btn b3">Консультація технолога</button>
+    <button class="btn b4">Детальніше</button>
+   </div>
+  </div>
+
+  <div class="card">
+   <h2>Навігація (чернетка)</h2>
+   <div class="topnav">
+    <span>Головна</span><span>Послуги</span><span>Обладнання</span><span>Блог</span><span>Про компанію</span><span>Контакти</span>
+   </div>
+  </div>
+
+  <div class="card hero">
+   <div class="heroBox">
+    <div class="chip">20+ років досвіду</div>
+    <h2 style="margin-top:12px">Виробництво шестерень та зубонарізка високої точності</h2>
+    <p>Виготовлення деталей за кресленнями замовника: від одиничних виробів до серійного запуску.</p>
+    <div class="btns" style="margin-top:14px">
+     <button class="btn b1">Отримати прорахунок</button>
+     <button class="btn b4" style="color:#fff;border-color:#93c5fd">Надіслати креслення</button>
+    </div>
+   </div>
+   <div class="heroMedia">Hero photo/video area</div>
+  </div>
+
+  <div class="card">
+   <h2>Блоки послуг (стиль)</h2>
+   <div class="grid3">
+    <div class="service"><h3>Зубонарізання</h3><p>Висока точність відповідно до техвимог.</p></div>
+    <div class="service"><h3>Виготовлення шестерень</h3><p>Циліндричні, конічні, прямозубі, косозубі.</p></div>
+    <div class="service"><h3>Черв’ячні передачі</h3><p>Фрезерування, шліфування, спецінструмент.</p></div>
+   </div>
+  </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="uk">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Precision Gear — Головна v2</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ <style>
+  :root{--p:#0F172A;--s:#1D4ED8;--a:#06B6D4;--t:#111827;--m:#4B5563;--bg:#EEF2F7;--w:#fff;--ok:#16A34A}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,sans-serif;color:var(--t);background:var(--bg)}
+  .c{max-width:1440px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:14px}
+  .menu{display:flex;gap:20px;font-size:16px;color:#334155;flex-wrap:wrap}
+  .menu a{color:#334155;text-decoration:none;font-weight:500}
+  .menu a:hover{color:var(--s)}
+  .btn{padding:11px 16px;border-radius:12px;border:none;font-weight:700;cursor:pointer;transition:.25s ease;box-shadow:0 0 0 rgba(29,78,216,0)}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 0 0 3px rgba(6,182,212,.25),0 8px 22px rgba(15,23,42,.18)}
+  .btn.p{background:var(--s);color:#fff}
+  .btn.g{background:var(--ok);color:#fff}
+  .btn.ghost{background:transparent;border:1px solid #93c5fd;color:#fff;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+  .tg-icon{width:16px;height:16px;display:inline-block}
+
+  .hero{display:grid;grid-template-columns:1fr 1.2fr;gap:20px;padding:28px 0;align-items:stretch}
+  .card{background:#fff;border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.09)}
+  .heroText{padding:28px;background:linear-gradient(145deg,var(--p),#0b2a6a);color:#fff;height:520px}
+  .heroText p{color:#c7d2fe;line-height:1.58}
+  .chip{display:inline-block;background:#1e3a8a;padding:7px 11px;border-radius:999px;font-size:12px}
+  .heroMedia{overflow:hidden;height:520px;display:flex;align-items:center;justify-content:center;background:#0b1227}
+  img{filter:contrast(1.06) saturate(1.04)}
+  .heroMedia img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:16px;padding:12px}
+  h1{font-size:46px;line-height:1.08;margin:12px 0 14px}
+  h2{font-size:31px;margin:0 0 12px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .s{padding:18px}.s b{font-size:24px;display:block;margin-bottom:4px}
+
+  .sec{margin:20px 0;padding:24px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .svc{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;background:#fff;transition:.2s ease}
+  .svc:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(2,6,23,.12)}
+  .svc img{width:100%;height:210px;object-fit:cover}
+  .svc .tx{padding:13px}.svc p{color:var(--m);font-size:14px;line-height:1.5}
+
+  .cap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .list{padding-left:18px;color:#334155;line-height:1.78}
+
+  .gal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .gal img{width:100%;height:170px;object-fit:cover;border-radius:10px;cursor:zoom-in}
+  .gal img:nth-child(3n){height:220px}
+  .gal img:nth-child(5n){height:200px}
+
+  .heroFill{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .heroFill .hf{background:rgba(255,255,255,.12);border:1px solid rgba(147,197,253,.35);padding:10px;border-radius:10px;font-size:13px;color:#dbeafe}
+  .cta{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--p);color:#fff;padding:24px}
+  .cta p{color:#cbd5e1;margin:6px 0 0}
+  footer{padding:24px 0;color:#64748b;font-size:14px}
+
+  @media (max-width:1100px){
+   .hero{grid-template-columns:1fr}
+   .heroText{height:auto}
+   .heroMedia{height:420px}
+   h1{font-size:36px}
+   .gal{grid-template-columns:repeat(4,1fr)}
+  }
+  #hoverPreview{position:fixed;left:0;top:0;width:min(42vw,560px);max-height:70vh;display:none;z-index:999;border-radius:12px;overflow:hidden;box-shadow:0 16px 40px rgba(2,6,23,.45);border:1px solid #334155;background:#0b1227;pointer-events:none}
+  #hoverPreview img{width:100%;height:100%;object-fit:contain;display:block}
+  @media (max-width:820px){
+   .c{padding:0 14px}
+   .menu{display:none}
+   .stats{grid-template-columns:1fr 1fr}
+   .grid3{grid-template-columns:1fr}
+   .cap{grid-template-columns:1fr}
+   .svc img{height:190px}
+   .gal{grid-template-columns:repeat(2,1fr)}
+   .gal img,.gal img:nth-child(3n),.gal img:nth-child(5n){height:150px}
+   .heroFill{grid-template-columns:1fr}
+   .heroMedia{height:320px}
+   .cta{flex-direction:column;align-items:flex-start}
+   h1{font-size:30px}
+   h2{font-size:25px}
+   #hoverPreview{display:none !important}
+  }
+ 
+  .counterBox{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
+  .counterBox span{font-size:12px;color:#64748b;font-weight:600}
+  .counterBox strong{font-size:24px;letter-spacing:1px;color:#0f172a;font-weight:800;font-variant-numeric:tabular-nums}
+  @media (max-width:820px){.counterBox span{font-size:11px}.counterBox strong{font-size:20px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="c nav">
+  <b>PRECISION GEAR</b>
+  <nav class="menu"><a href="homepage-v1.html">Головна</a><a href="poslugy.html">Послуги</a><a href="obladnannya.html">Обладнання</a><a href="blog.html">Блог</a><a href="kontakty.html">Контакти</a></nav>
+  <div class="counterBox"><span>Виготовлено деталей:</span><strong id="partsCounter">00012086</strong></div>
+ </div>
+</header>
+
+<main class="c">
+ <section class="hero">
+  <div class="card heroText">
+   <span class="chip">20+ років досвіду</span>
+   <h1>Виробництво шестерень та зубонарізка високої точності</h1>
+   <p>Виготовлення шестерень, черв’ячних передач і механічна обробка деталей за кресленнями замовника.</p>
+   <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+    <button class="btn g">Написати e-mail</button>
+    <a class="btn ghost" href="https://t.me/Diyyura" target="_blank" rel="noopener noreferrer" aria-label="Telegram @Diyyura">
+     <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.78 15.17l-.4 5.64c.57 0 .82-.25 1.12-.55l2.69-2.57 5.58 4.09c1.02.56 1.75.27 2.01-.94l3.64-17.06h.01c.31-1.45-.52-2.02-1.52-1.65L1.52 10.36c-1.41.55-1.39 1.34-.24 1.7l5.46 1.7L19.4 5.8c.6-.4 1.14-.18.69.22"/></svg>
+     Telegram
+    </a>
+   </div>
+   <div class="heroFill">
+    <div class="hf"><b>Точність</b><br>Виготовлення за техвимогами та кресленнями</div>
+    <div class="hf"><b>Терміни</b><br>Швидкий розрахунок і запуск у виробництво</div>
+    <div class="hf"><b>Формат роботи</b><br>Одиничні, малі та серійні партії</div>
+   </div>
+  </div>
+  <div class="heroMedia"><img src="assets/web/hero-main.png" alt="Комплект шестерень"/></div>
+ </section>
+
+ <section class="stats">
+  <div class="card s"><b>1300 мм</b><span>зубодовбання</span></div>
+  <div class="card s"><b>1000 мм</b><span>зубофрезерування</span></div>
+  <div class="card s"><b>560 мм</b><span>зубошліфування</span></div>
+  <div class="card s"><b>4–5 осей</b><span>фрезерні роботи</span></div>
+ </section>
+
+ <section class="card sec">
+  <h2>Ключові послуги</h2>
+  <div class="grid3">
+   <article class="svc"><img src="assets/web/pg-11.jpeg" alt="Зубонарізання"><div class="tx"><h3>Зубонарізання</h3><p>Висока точність обробки зубчастих коліс різних типів.</p></div></article>
+   <article class="svc"><img src="assets/web/pg-03.jpeg" alt="Черв'ячні передачі"><div class="tx"><h3>Черв’ячні передачі</h3><p>Фрезерування та шліфування черв’яків і черв’ячних коліс.</p></div></article>
+   <article class="svc"><img src="assets/web/pg-16.jpeg" alt="Виготовлення шестерень"><div class="tx"><h3>Виготовлення шестерень</h3><p>Циліндричні, конічні, прямозубі та косозубі рішення.</p></div></article>
+  </div>
+ </section>
+
+ <section class="cap">
+  <div class="card sec">
+   <h2>Обладнання та виробничі можливості</h2>
+   <p style="color:#475569;line-height:1.6;margin:0 0 10px">Працюємо на спеціалізованому зубообробному обладнанні, що забезпечує стабільну геометрію зуба, чисту поверхню та повторюваність результату в кожній партії.</p>
+   <ul class="list">
+    <li><b>Зубодовбання</b> — деталі до 1300 мм</li>
+    <li><b>Зубофрезерування</b> — деталі до 1000 мм</li>
+    <li><b>Конічні колеса (прямий зуб)</b> — до 500 мм</li>
+    <li><b>Конічні колеса (круговий зуб)</b> — до 150 мм</li>
+    <li><b>Зубошліфування циліндричних коліс</b> — до 560 мм</li>
+   </ul>
+   <p style="color:#334155;line-height:1.6;margin:8px 0 0"><b>Результат:</b> точні посадки, стабільний контакт зуба та довговічна робота передачі під навантаженням.</p>
+  </div>
+  <div class="card sec" style="padding:10px"><img src="assets/web/pg-02.jpeg" style="width:100%;height:100%;min-height:320px;object-fit:cover;border-radius:10px" alt="Обладнання"></div>
+ </section>
+
+ <section class="card sec">
+  <h2>Галерея виробництва</h2>
+  <div class="gal">
+   <img src="assets/web/pg-01.jpeg" alt="">
+   <img src="assets/web/pg-04.jpeg" alt="">
+   <img src="assets/web/pg-05.jpeg" alt="">
+   <img src="assets/web/pg-07.jpeg" alt="">
+   <img src="assets/web/pg-08.jpeg" alt="">
+   <img src="assets/web/pg-09.jpeg" alt="">
+   <img src="assets/web/pg-10.jpeg" alt="">
+   <img src="assets/web/pg-12.jpeg" alt="">
+   <img src="assets/web/pg-13.jpeg" alt="">
+   <img src="assets/web/pg-14.jpeg" alt="">
+   <img src="assets/web/pg-15.jpeg" alt="">
+   <img src="assets/web/pg-18.jpeg" alt="">
+   <img src="assets/web/gallery-001.jpeg" alt="">
+   <img src="assets/web/gallery-002.jpeg" alt="">
+   <img src="assets/web/gallery-003.jpeg" alt="">
+   <img src="assets/web/gallery-004.jpeg" alt="">
+   <img src="assets/web/gallery-005.jpeg" alt="">
+   <img src="assets/web/gallery-006.jpeg" alt="">
+   <img src="assets/web/gallery-007.jpeg" alt="">
+   <img src="assets/web/gallery-008.jpeg" alt="">
+   <img src="assets/web/gallery-009.jpeg" alt="">
+   <img src="assets/web/gallery-010.jpeg" alt="">
+   <img src="assets/web/gallery-011.jpeg" alt="">
+   <img src="assets/web/gallery-012.jpeg" alt="">
+   <img src="assets/web/gallery-013.jpeg" alt="">
+   <img src="assets/web/gallery-014.jpeg" alt="">
+   <img src="assets/web/gallery-015.jpeg" alt="">
+   <img src="assets/web/gallery-016.jpeg" alt="">
+   <img src="assets/web/gallery-017.jpeg" alt="">
+   <img src="assets/web/gallery-018.jpeg" alt="">
+   <img src="assets/web/gallery-019.jpeg" alt="">
+   <img src="assets/web/gallery-020.jpeg" alt="">
+   <img src="assets/web/gallery-021.jpeg" alt="">
+   <img src="assets/web/gallery-022.jpeg" alt="">
+   <img src="assets/web/gallery-023.jpeg" alt="">
+   <img src="assets/web/gallery-024.jpeg" alt="">
+  </div>
+ </section>
+
+ <section class="card cta">
+  <div>
+   <h2 style="color:#fff;margin:0">Потрібен прорахунок за кресленням?</h2>
+   <p>Надішліть креслення або фото деталі — підготуємо технічну відповідь і вартість.</p>
+  </div>
+  <button class="btn g">Надіслати креслення</button>
+ </section>
+
+ <footer>© Precision Gear — концепт головної сторінки v2</footer>
+ <footer>© 2026 Precision Gear. Всі права захищені.</footer>
+</main>
+
+<div id="hoverPreview" aria-hidden="true"><img src="" alt="Повний перегляд фото"></div>
+<script>
+ (function(){
+  const preview=document.getElementById('hoverPreview');
+  const pImg=preview.querySelector('img');
+  const imgs=document.querySelectorAll('.gal img');
+  if(!imgs.length) return;
+
+  function place(x,y){
+   const pad=18;
+   const w=preview.offsetWidth||420;
+   const h=preview.offsetHeight||260;
+   let left=x+22, top=y+22;
+   if(left+w>window.innerWidth-pad) left=x-w-22;
+   if(top+h>window.innerHeight-pad) top=y-h-22;
+   preview.style.left=Math.max(pad,left)+'px';
+   preview.style.top=Math.max(pad,top)+'px';
+  }
+
+  imgs.forEach(img=>{
+   img.addEventListener('mouseenter',(e)=>{
+    pImg.src=img.src;
+    preview.style.display='block';
+    place(e.clientX,e.clientY);
+   });
+   img.addEventListener('mousemove',(e)=>place(e.clientX,e.clientY));
+   img.addEventListener('mouseleave',()=>{preview.style.display='none';});
+  });
+ })();
+</script>
+
+<script>
+(function(){
+ const el=document.getElementById('partsCounter');
+ if(!el) return;
+ const baseParts=12086;
+ const baseDate=new Date('2026-05-14T00:00:00');
+ const now=new Date();
+ const oneDay=24*60*60*1000;
+ let added=0;
+ for(let d=new Date(baseDate.getTime()+oneDay); d<=now; d=new Date(d.getTime()+oneDay)){
+  const wd=d.getDay();
+  if(wd!==0 && wd!==6) added+=17;
+ }
+ const val=baseParts+added;
+ el.textContent=String(val).padStart(8,'0');
+})();
+</script>
+</body>
+</html>
