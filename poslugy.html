@@ -36,7 +36,7 @@
   @media(max-width:980px){.grid{grid-template-columns:1fr 1fr}.tech{grid-template-columns:1fr}.photoGrid{grid-template-columns:repeat(3,1fr)}}
   #hoverPreview{position:fixed;left:0;top:0;width:min(42vw,560px);max-height:70vh;display:none;z-index:999;border-radius:12px;overflow:hidden;box-shadow:0 16px 40px rgba(2,6,23,.45);border:1px solid #334155;background:#0b1227;pointer-events:none}
   #hoverPreview img{width:100%;height:100%;object-fit:contain;display:block}
-  @media(max-width:820px){.c{padding:0 14px}.menu{display:none}#hoverPreview{display:none !important}}
+  @media(max-width:820px){.c{padding:0 14px}.menu{display:flex;overflow-x:auto;white-space:nowrap;gap:12px;padding-bottom:4px;width:100%}#hoverPreview{display:none !important}}
   @media(max-width:760px){.grid{grid-template-columns:1fr}.photoGrid{grid-template-columns:repeat(2,1fr)}}
  
 footer{padding:26px 0;color:#64748b;font-size:14px;text-align:center}
@@ -76,16 +76,20 @@ footer{padding:26px 0;color:#64748b;font-size:14px;text-align:center}
   </section>
 
   <section class="sec">
-   <h2>Фото виробництва та деталей</h2>
+   <h2>Фото виробництва деталей</h2>
    <div class="photoGrid">
     <img src="assets/web/gallery-001.jpeg" alt="Виробництво шестерень">
     <img src="assets/web/gallery-004.jpeg" alt="Обробка деталі">
     <img src="assets/web/gallery-007.jpeg" alt="Металообробка">
-    <img src="assets/web/gallery-010.jpeg" alt="Зубонарізання">
+    <img src="assets/web/gallery-025.jpeg" alt="Точна деталь">
     <img src="assets/web/gallery-013.jpeg" alt="Точна деталь">
-    <img src="assets/web/gallery-016.jpeg" alt="Шестерні">
-    <img src="assets/web/gallery-019.jpeg" alt="Технологічний процес">
+    <img src="assets/web/gallery-021.jpeg" alt="Шестерні">
+    <img src="assets/web/gallery-023.jpeg" alt="Точна деталь">
     <img src="assets/web/gallery-022.jpeg" alt="Виробничий етап">
+    <img src="assets/web/gallery-026.jpeg" alt="Деталь крупним планом">
+    <img src="assets/web/gallery-029.jpeg" alt="Металева деталь">
+    <img src="assets/web/gallery-030.jpeg" alt="Точна механічна деталь">
+    <img src="assets/web/gallery-031.jpeg" alt="Готова деталь">
    </div>
   </section>
   <footer>© 2026 Precision Gear. Всі права захищені.</footer>
@@ -128,7 +132,7 @@ footer{padding:26px 0;color:#64748b;font-size:14px;text-align:center}
  let added=0;
  for(let d=new Date(baseDate.getTime()+oneDay); d<=now; d=new Date(d.getTime()+oneDay)){
   const wd=d.getDay();
-  if(wd!==0 && wd!==6) added+=17;
+  if(wd!==0) added+=17;
  }
  const val=baseParts+added;
  el.textContent=String(val).padStart(8,'0');

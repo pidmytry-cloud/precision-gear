@@ -23,14 +23,18 @@
   .hero p{color:#c7d2fe;line-height:1.55;max-width:980px}
   .sec{background:var(--w);border-radius:14px;padding:22px;margin:16px 0;box-shadow:0 8px 22px rgba(15,23,42,.07)}
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .capGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .capCard{border:1px solid #dbeafe;border-radius:12px;padding:14px;background:#f8fbff}
+  .capCard h3{margin:0 0 8px;font-size:20px}
+  .capCard ul{margin:0;padding-left:18px;line-height:1.55;color:#334155}
   .card{border:1px solid #e5e7eb;border-radius:12px;padding:14px;background:#fff}
   .card img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:10px}
   .card h3{margin:0 0 8px;font-size:18px}
   .meta{font-size:13px;color:#1e3a8a;font-weight:600;margin-bottom:8px}
   .card p{margin:0;color:var(--m);line-height:1.55}
   footer{padding:26px 0;color:#64748b;font-size:14px;text-align:center}
-  @media(max-width:980px){.grid{grid-template-columns:1fr}}
-  @media(max-width:820px){.c{padding:0 14px}.nav{align-items:flex-start;gap:8px;flex-direction:column}.menu{display:flex;overflow-x:auto;white-space:nowrap;gap:12px;padding-bottom:4px;width:100%}}
+  @media(max-width:980px){.grid{grid-template-columns:1fr}.capGrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:820px){.c{padding:0 14px}.nav{align-items:flex-start;gap:8px;flex-direction:column}.menu{display:flex;overflow-x:auto;white-space:nowrap;gap:12px;padding-bottom:4px;width:100%}.capGrid{grid-template-columns:1fr}}
  
   .counterBox{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
   .counterBox span{font-size:12px;color:#64748b;font-weight:600}
@@ -54,16 +58,52 @@
   </section>
 
   <section class="sec">
+   <h2>Технічні можливості виробництва</h2>
+   <div class="capGrid">
+    <article class="capCard">
+     <h3>Циліндричні шестерні</h3>
+     <ul>
+      <li>Зубофрезерування: прямозубі та косозубі (m0.4–14), діаметр до 800 мм</li>
+      <li>Зубодовбання: зовнішнє та внутрішнє зачеплення (m0.3–12), діаметр до 1300 мм</li>
+      <li>Зубошліфування: m0.5–4 (черв’ячний круг), m2–12 (конічний круг)</li>
+     </ul>
+    </article>
+    <article class="capCard">
+     <h3>Конічні шестерні</h3>
+     <ul>
+      <li>Прямозубі: m0.3–10, діаметр до 500 мм</li>
+      <li>З круговим зубом: m0.5–3, діаметр до 125 мм</li>
+     </ul>
+    </article>
+    <article class="capCard">
+     <h3>Черв’ячні передачі та інструмент</h3>
+     <ul>
+      <li>Виготовлення черв’яків: фрезерування (до m14), шліфування (до m8)</li>
+      <li>Черв’ячні колеса: фрезерування (m0.4–12), Ø до 800 мм</li>
+      <li>Спецможливості: черв’ячні фрези, різьбонакатні ролики</li>
+     </ul>
+    </article>
+    <article class="capCard">
+     <h3>Зубчасті рейки</h3>
+     <ul>
+      <li>Обробка: фрезерування та зубодовбання</li>
+      <li>Параметри: m1–12, довжина до 1500 мм</li>
+     </ul>
+    </article>
+   </div>
+  </section>
+
+  <section class="sec">
    <h2>Верстати та призначення</h2>
    <div class="grid">
-    <article class="card"><img src="assets/equipment-generated/hobbing.jpg" alt="Зубофрезерний верстат"><h3>Зубофрезерний верстат (Hobbing)</h3><div class="meta">Нарізання зубів до ~1000 мм</div><p>Основна машина для серійного нарізання циліндричних коліс. Дає стабільний крок зуба та високу повторюваність у партіях.</p></article>
-    <article class="card"><img src="assets/equipment-generated/shaper.jpg" alt="Зубодовбальний верстат"><h3>Зубодовбальний верстат (Gear Shaper)</h3><div class="meta">Внутрішні/зовнішні профілі до ~1300 мм</div><p>Підходить для складної геометрії, де класичний хоббінг обмежений. Часто застосовується для ремонтних і нестандартних деталей.</p></article>
-    <article class="card"><img src="assets/equipment-generated/gear-grinding.jpg" alt="Зубошліфувальний верстат"><h3>Зубошліфувальний верстат (Gear Grinding)</h3><div class="meta">Фініш до ~560 мм</div><p>Фінішна обробка робочих поверхонь зуба. Підвищує плавність ходу, знижує шум і покращує ресурс передачі.</p></article>
-    <article class="card"><img src="assets/equipment-generated/bevel.jpg" alt="Верстат конічних коліс"><h3>Верстат конічних коліс (Bevel Gear Cutting)</h3><div class="meta">Конічні колеса 150–500 мм</div><p>Формує точний профіль конічних передач. Критичний для трансмісій, де важливий стабільний контакт і мінімальні вібрації.</p></article>
-    <article class="card"><img src="assets/equipment-generated/cnc-lathe.jpg" alt="Токарний ЧПК"><h3>Токарний ЧПК-центр (CNC Turning)</h3><div class="meta">Вали, втулки, базові поверхні</div><p>Формує точні посадки та співвісність перед зубонарізанням. Основа геометричної точності для подальших операцій.</p></article>
-    <article class="card"><img src="assets/equipment-generated/vmc.jpg" alt="Фрезерний центр"><h3>5-осьовий обробний центр (VMC)</h3><div class="meta">Складні поверхні та корпуси</div><p>Дає гнучкість для нестандартних деталей та складних контурів. Зменшує кількість переустановок і ризик похибки.</p></article>
-    <article class="card"><img src="assets/equipment-generated/cyl-grinder.jpg" alt="Круглошліфувальний"><h3>Круглошліфувальний верстат</h3><div class="meta">Шліфування валів і посадок</div><p>Забезпечує точні діаметри та шорсткість. Впливає на ресурс підшипникових вузлів та якість збірки.</p></article>
-    <article class="card"><img src="assets/equipment-generated/cmm.jpg" alt="Контроль CMM"><h3>Контрольно-вимірювальний комплекс (CMM)</h3><div class="meta">Контроль кроку, профілю, биття</div><p>Підтверджує відповідність кресленню та техвимогам. Зменшує ризики браку перед відвантаженням клієнту.</p></article>
+    <article class="card"><img src="assets/equipment-generated/hobbing.jpg" alt="Зубофрезерний верстат"><h3>Зубофрезерний верстат</h3><div class="meta">Нарізання зубів до ~1000 мм</div><p>Основна машина для серійного нарізання циліндричних коліс. Дає стабільний крок зуба та високу повторюваність у партіях.</p></article>
+    <article class="card"><img src="assets/equipment-generated/shaper.jpg" alt="Зубодовбальний верстат"><h3>Зубодовбальний верстат</h3><div class="meta">Внутрішні/зовнішні профілі до ~1300 мм</div><p>Підходить для складної геометрії, де класичний хоббінг обмежений. Часто застосовується для ремонтних і нестандартних деталей.</p></article>
+    <article class="card"><img src="assets/equipment-generated/gear-grinding.jpg" alt="Зубошліфувальний верстат"><h3>Зубошліфувальний верстат</h3><div class="meta">Фініш до ~560 мм</div><p>Фінішна обробка робочих поверхонь зуба. Підвищує плавність ходу, знижує шум і покращує ресурс передачі.</p></article>
+    <article class="card"><img src="assets/equipment-generated/bevel.jpg" alt="Зубообробний верстат для конічних коліс"><h3>Зубообробний верстат для конічних коліс</h3><div class="meta">Конічні колеса 150–500 мм</div><p>Формує точний профіль конічних передач. Критичний для трансмісій, де важливий стабільний контакт і мінімальні вібрації.</p></article>
+    <article class="card"><img src="assets/equipment-generated/cnc-lathe.jpg" alt="Токарний верстат з ЧПК"><h3>Токарний верстат з ЧПК</h3><div class="meta">Вали, втулки, базові поверхні</div><p>Формує точні посадки та співвісність перед зубонарізанням. Основа геометричної точності для подальших операцій.</p></article>
+    <article class="card"><img src="assets/equipment-generated/vmc.jpg" alt="Вертикальний обробний центр з ЧПК"><h3>Вертикальний обробний центр з ЧПК</h3><div class="meta">Складні поверхні та корпуси</div><p>Дає гнучкість для нестандартних деталей та складних контурів. Зменшує кількість переустановок і ризик похибки.</p></article>
+    <article class="card"><img src="assets/equipment-generated/cyl-grinder.jpg" alt="Круглошліфувальний верстат"><h3>Круглошліфувальний верстат</h3><div class="meta">Шліфування валів і посадок</div><p>Забезпечує точні діаметри та шорсткість. Впливає на ресурс підшипникових вузлів та якість збірки.</p></article>
+    <article class="card"><img src="assets/equipment-generated/cmm.jpg" alt="Координатно-вимірювальна машина"><h3>Координатно-вимірювальна машина (КВМ)</h3><div class="meta">Контроль кроку, профілю, биття</div><p>Підтверджує відповідність кресленню та техвимогам. Зменшує ризики браку перед відвантаженням клієнту.</p></article>
    </div>
   </section>
 
@@ -81,7 +121,7 @@
  let added=0;
  for(let d=new Date(baseDate.getTime()+oneDay); d<=now; d=new Date(d.getTime()+oneDay)){
   const wd=d.getDay();
-  if(wd!==0 && wd!==6) added+=17;
+  if(wd!==0) added+=17;
  }
  const val=baseParts+added;
  el.textContent=String(val).padStart(8,'0');

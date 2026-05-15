@@ -58,11 +58,12 @@
       <div class="item"><div class="label">Телефон 1</div><a class="value" href="tel:+380662521367">+380 (66) 252 13 67</a></div>
       <div class="item"><div class="label">Телефон 2</div><a class="value" href="tel:+380979856476">+380 (97) 985 64 76</a></div>
       <div class="item"><div class="label">Telegram</div><a class="value" href="https://t.me/Diyyura" target="_blank" rel="noopener">@Diyyura</a></div>
-      <div class="item"><div class="label">E-mail</div><a class="value" href="mailto:info@precision-gear.com">info@precision-gear.com</a></div>
+      <div class="item"><div class="label">E-mail (основний)</div><a class="value" href="mailto:y0662521367@gmail.com">y0662521367@gmail.com</a></div>
+      <div class="item"><div class="label">E-mail (додатковий)</div><a class="value" href="mailto:info@precision-gear.com">info@precision-gear.com</a></div>
 
       <div class="actions">
         <a class="btn" href="https://t.me/Diyyura" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn alt" href="mailto:info@precision-gear.com">Написати e-mail</a>
+        <a class="btn alt" href="mailto:y0662521367@gmail.com">Написати e-mail</a>
       </div>
 
       <p class="info" style="margin-top:14px">Режим обробки запитів: Пн–Пт, 09:00–18:00. Для швидкого прорахунку додайте матеріал, габарити, кількість та бажаний термін.</p>
@@ -94,7 +95,7 @@
   const oneDay=24*60*60*1000;
   let added=0;
   for(let d=new Date(baseDate.getTime()+oneDay); d<=now; d=new Date(d.getTime()+oneDay)){
-    const wd=d.getDay(); if(wd!==0 && wd!==6) added+=17;
+    const wd=d.getDay(); if(wd!==0) added+=17;
   }
   el.textContent=String(baseParts+added).padStart(8,'0');
 })();
